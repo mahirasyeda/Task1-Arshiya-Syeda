@@ -1,0 +1,137 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('images/background.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+header {
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 1em 0;
+    text-align: center;
+}
+
+header .logo img {
+    width: 100px;
+    height: auto;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+section {
+    padding: 2em;
+    margin: 1em;
+    border-radius: 10px;
+}
+
+/* Specific Styles for the Home Section */
+#home {
+    background: none; /* No background color for the first page */
+    color:rgb(255, 255, 255); /* Ensure text is readable against background image */
+    text-align: center;
+}
+
+/* Hover Effects for Other Sections */
+section:not(#home) {
+    background: rgba(255, 255, 255, 0.8);
+}
+
+section:not(#home) h1:hover,
+section:not(#home) h2:hover,
+section:not(#home) h3:hover,
+section:not(#home) p:hover,
+nav ul li a:hover {
+    color: #ff6347; /* Tomato color */
+    transition: color 0.3s ease-in-out;
+}
+
+.product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+}
+
+.product {
+    flex: 1 1 calc(25% - 1em);
+    background: white;
+    padding: 1em;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.product img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.product h3, .product p {
+    text-align: center;
+}
+
+.product:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.brand-logos {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1em;
+}
+
+.brand-logos img {
+    width: 150px;
+    height: auto;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.brand-logos img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .product {
+        flex: 1 1 calc(50% - 1em);
+    }
+
+    .brand-logos img {
+        width: 100px;
+    }
+}
+
+@media (max-width: 480px) {
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .product {
+        flex: 1 1 100%;
+    }
+
+    .brand-logos img {
+        width: 80px;
+    }
+}
